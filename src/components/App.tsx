@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import logo from '../logo.svg';
 import { tranformedPytania } from '../utils/transformToList';
+import image from '../assets/lesiu.svg';
 import './App.css';
 
 function App() {
@@ -11,17 +11,14 @@ function App() {
 	const [question, setQuestion] = useState(
 		'Tutaj pojawi się pytanie po kliknięciu przycisku losuj'
 	);
-	const [questions, setQuestions] = useState<{
-		notUsed: { question: string; index: number }[];
-		used: { question: string; index: number }[];
-	}>(initialState);
+	const [questions, setQuestions] =
+		useState<{
+			notUsed: { question: string; index: number }[];
+			used: { question: string; index: number }[];
+		}>(initialState);
 
 	const getRandomQuestion = () => {
-		if (questions.notUsed.length === 1) {
-			setQuestions(initialState);
-			setQuestion(
-				'Tutaj pojawi się pytanie po kliknięciu przycisku losuj'
-			);
+		if (questions.notUsed.length === 0) {
 			return 'Koniec pytań. Kliknij resetruj aby zagrać ponownie';
 		}
 		const randomQuestion =
@@ -37,14 +34,24 @@ function App() {
 		return randomQuestion.question;
 	};
 
+	const resetStatus = () => {
+		setQuestions(initialState);
+		setQuestion('Tutaj pojawi się pytanie po kliknięciu przycisku losuj');
+	};
+
 	return (
 		<div className='App'>
 			<header className='App-header'>
-				<img src={logo} className='App-logo' alt='logo' />
+				<h1>Have You Hlebek</h1>
+				<img src={image} className='App-logo' alt='logo' />
 				<p>{question}</p>
-				<button onClick={() => setQuestion(getRandomQuestion())}>
-					{questions.notUsed.length === 0 ? 'Resetuj' : 'Losuj'}
-				</button>
+				{questions.notUsed.length === 0 ? (
+					<button onClick={resetStatus}>Resetuj</button>
+				) : (
+					<button onClick={() => setQuestion(getRandomQuestion())}>
+						Losuj
+					</button>
+				)}
 				<div className='info-container'>
 					<div>Pozostało pytań: {questions.notUsed.length}</div>
 					<div>Wykorzystane: {questions.used.length}</div>
