@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/haveYouHlebek/static/css/main.f2bae785.chunk.css",
+    "main.css": "/haveYouHlebek/static/css/main.9d79f72a.chunk.css",
     "main.js": "/haveYouHlebek/static/js/main.d3a06373.chunk.js",
     "main.js.map": "/haveYouHlebek/static/js/main.d3a06373.chunk.js.map",
     "runtime-main.js": "/haveYouHlebek/static/js/runtime-main.ae00c3ca.js",
@@ -10,14 +10,14 @@
     "static/js/3.7cfe3f40.chunk.js": "/haveYouHlebek/static/js/3.7cfe3f40.chunk.js",
     "static/js/3.7cfe3f40.chunk.js.map": "/haveYouHlebek/static/js/3.7cfe3f40.chunk.js.map",
     "index.html": "/haveYouHlebek/index.html",
-    "static/css/main.f2bae785.chunk.css.map": "/haveYouHlebek/static/css/main.f2bae785.chunk.css.map",
+    "static/css/main.9d79f72a.chunk.css.map": "/haveYouHlebek/static/css/main.9d79f72a.chunk.css.map",
     "static/js/2.2c80bbb8.chunk.js.LICENSE.txt": "/haveYouHlebek/static/js/2.2c80bbb8.chunk.js.LICENSE.txt",
     "static/media/lesiu.2799034b.svg": "/haveYouHlebek/static/media/lesiu.2799034b.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.ae00c3ca.js",
     "static/js/2.2c80bbb8.chunk.js",
-    "static/css/main.f2bae785.chunk.css",
+    "static/css/main.9d79f72a.chunk.css",
     "static/js/main.d3a06373.chunk.js"
   ]
 }
