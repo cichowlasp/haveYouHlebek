@@ -61,7 +61,7 @@ function App() {
 				<div
 					className='settings'
 					onClick={() => setShowSettings((prev) => !prev)}>
-					<img src={settings} alt='settings' />
+					<img width='35px' src={settings} alt='settings' />
 				</div>
 				<h1>Have You Hlebek</h1>
 				<img src={image} className='App-logo' alt='logo' />
