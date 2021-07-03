@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { tranformedPytania } from '../utils/transformToList';
 import image from '../assets/lesiu.svg';
+import settings from '../assets/settings.svg';
 import './App.css';
 
 function App() {
@@ -20,6 +21,8 @@ function App() {
 		)
 	);
 
+	const [showSettings, setShowSettings] = useState(false);
+
 	const getRandomQuestion = () => {
 		if (questions.notUsed.length === 0) {
 			return 'Koniec pytań. Kliknij resetruj aby zagrać ponownie';
@@ -34,18 +37,32 @@ function App() {
 			),
 			used: [...questions.used, randomQuestion],
 		});
+		localStorage.setItem(
+			'status',
+			JSON.stringify({
+				notUsed: questions.notUsed.filter(
+					({ index }) => index !== randomQuestion.index
+				),
+				used: [...questions.used, randomQuestion],
+			})
+		);
 		return randomQuestion.question;
 	};
 
 	const resetStatus = () => {
 		setQuestions(initialState);
-		localStorage.setItem('status', JSON.stringify(questions));
+		localStorage.setItem('status', JSON.stringify(initialState));
 		setQuestion('Tutaj pojawi się pytanie po kliknięciu przycisku losuj');
 	};
 
 	return (
 		<div className='App'>
 			<header className='App-header'>
+				<div
+					className='settings'
+					onClick={() => setShowSettings((prev) => !prev)}>
+					<img src={settings} alt='settings' />
+				</div>
 				<h1>Have You Hlebek</h1>
 				<img src={image} className='App-logo' alt='logo' />
 				<div className='container'>
@@ -54,14 +71,7 @@ function App() {
 				{questions.notUsed.length === 0 ? (
 					<button onClick={resetStatus}>Resetuj</button>
 				) : (
-					<button
-						onClick={() => {
-							setQuestion(getRandomQuestion());
-							localStorage.setItem(
-								'status',
-								JSON.stringify(questions)
-							);
-						}}>
+					<button onClick={() => setQuestion(getRandomQuestion())}>
 						Losuj
 					</button>
 				)}
@@ -73,6 +83,21 @@ function App() {
 					<div className='split'>
 						Wykorzystane: <span>{questions.used.length}</span>
 					</div>
+				</div>
+				<div className={showSettings ? 'settings-menu' : 'disabled'}>
+					<div
+						className='close'
+						onClick={() => setShowSettings(false)}>
+						X
+					</div>
+					<h1>Settings</h1>
+					<button
+						onClick={() => {
+							resetStatus();
+							setShowSettings(false);
+						}}>
+						Resetuj
+					</button>
 				</div>
 			</header>
 		</div>

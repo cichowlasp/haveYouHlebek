@@ -55,6 +55,11 @@ button:hover {
 .split span {
 	margin-left: 1rem;
 }
+.settings {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
 
 .App-header {
 	background-color: #282c34;
@@ -78,4 +83,31 @@ button:hover {
 	to {
 		transform: rotate(360deg);
 	}
+}
+
+.settings-menu {
+	position: absolute;
+	background-color: white;
+	color: black;
+	border-radius: 20px;
+	width: 80vw;
+	top: 1;
+	padding-bottom: 1rem;
+}
+
+.settings-menu .close {
+	position: absolute;
+	height: fit-content;
+	width: fit-content;
+	right: 20px;
+	top: 10px;
+	font-weight: bolder;
+}
+
+.settings-menu .close:hover {
+	cursor: pointer;
+}
+
+.disabled {
+	display: none;
 }
