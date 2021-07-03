@@ -23,7 +23,7 @@ p {
 
 @media (prefers-reduced-motion: no-preference) {
 	.App-logo {
-		animation: App-logo-spin infinite 10s linear;
+		animation: App-logo-spin infinite 5s linear;
 	}
 }
 
@@ -42,7 +42,7 @@ button:hover {
 	cursor: pointer;
 	background-color: black;
 	color: white;
-	border: 4px solid white;
+	border: 3px solid white;
 }
 
 .info-container {
@@ -59,6 +59,9 @@ button:hover {
 	position: absolute;
 	top: 10px;
 	left: 10px;
+}
+.settings:hover {
+	cursor: pointer;
 }
 
 .App-header {
@@ -93,6 +96,18 @@ button:hover {
 	width: 80vw;
 	top: 1;
 	padding-bottom: 1rem;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+		rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+		rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+@keyframes fadein {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }
 
 .settings-menu .close {
