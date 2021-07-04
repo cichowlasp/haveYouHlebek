@@ -197,7 +197,7 @@ const pytania = `1.Czy kiedykolwiek wysyłałeś komuś sprośne zdjęcia?
 197. Czy kiedykolwiek miałeś przygodę oralną z kimś z kim nie całowałeś się w usta wcale?
 198. czy kiedykowliek doznałeś kontuzji albo podraznienia po uzywaniu zabawek erotycznych?
 199. Czy kiedykolwiek sąsiedzi dobijali się do mnie po głośnej sesji pukania?
-200. Czy kiedykowiek całowałeś się z kimś gdy w międzyczasie dolewali Ci alkoholu?
+200. Czy kkiedykowiek całowałeś się z kimś gdy w międzyczasie dolewali Ci alkoholu?
 201. Czy kiedykolwiek zjebałeś się podczas pukania?
 202. Czy kiedykolwiek zjebałeś się podczas całowania z kimś?
 203. Czy kiedykolwiek zdejmowałeś komuś część ubrania ustami lub zębami?
@@ -258,6 +258,7 @@ const pytania = `1.Czy kiedykolwiek wysyłałeś komuś sprośne zdjęcia?
 258. Czy kiedykolwiek czytałeś ksiązki bez fabuły?
 259. Czy kiedykolwiek spałeś ze swoim zwierzakiem?
 260. Czy kiedykolwiek musiałeś brać tabletkę "dzień po"?
+261. Czy kiedykolwiek oglądałeś Boku no Pico?
 262. TRIGGEER WARNING !Czy kiedykolwiek zrzygałeś się i potem to połknąłeś?
 263. Czy kiedykolwiek pukałeś się pod prysznicem?
 264. Czy kiedykolwiek bałeś się ciemności?

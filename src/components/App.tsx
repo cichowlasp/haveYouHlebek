@@ -21,6 +21,8 @@ function App() {
 		)
 	);
 
+	const [importedQuestions, setImportedQuestions] = useState<string>('');
+
 	const [showSettings, setShowSettings] = useState(false);
 
 	const getRandomQuestion = () => {
@@ -91,13 +93,64 @@ function App() {
 						X
 					</div>
 					<h1>Settings</h1>
-					<button
-						onClick={() => {
-							resetStatus();
-							setShowSettings(false);
-						}}>
-						Resetuj
-					</button>
+					<div className='options'>
+						<button
+							onClick={() => {
+								resetStatus();
+								setShowSettings(false);
+							}}>
+							Resetuj
+						</button>
+						<textarea
+							value={importedQuestions}
+							onChange={(event) => {
+								setImportedQuestions(event.target.value);
+							}}
+							placeholder='Tutaj wklej pytania'></textarea>
+						<div>
+							<button
+								disabled={
+									{
+										notUsed: importedQuestions
+											.split('\n')
+											.map((el, index) => {
+												return {
+													index: index,
+													question: el.trim(),
+												};
+											}),
+										used: [],
+									}.notUsed.length === 1
+										? true
+										: false
+								}
+								onClick={() => {
+									setQuestions({
+										notUsed: importedQuestions
+											.split('\n')
+											.map((el, index) => {
+												return {
+													index: index,
+													question: el.trim(),
+												};
+											}),
+										used: [],
+									});
+									setQuestion(
+										'Tutaj pojawi się pytanie po kliknięciu przycisku losuj'
+									);
+									setShowSettings(false);
+								}}
+								className='text-area'>
+								Zastąp pytania
+							</button>
+							<button
+								onClick={() => setImportedQuestions('')}
+								className='text-area'>
+								Wyczyść zawartość
+							</button>
+						</div>
+					</div>
 				</div>
 			</header>
 		</div>
