@@ -98,7 +98,6 @@ const pytania = `1.Czy kiedykolwiek wysyłałeś komuś sprośne zdjęcia?
 98. Czy kiedykolwiek podwijałaś sukienke, żeby była krótsza?
 99. Czy kiedykolwiek miałeś crusha na przyjaciela swojego chłopaka?
 100. Czy kiedykowliek ktoś śpiewał Ci serenady?
--
 101. Czy kiedykolwiek udawałeś orgazm?
 102. Czy kiedykolwiek nosiłeś bieliznę jako część ubrania?
 103. Czy kiedykolwiek ktoś Ci się oświadczył?
