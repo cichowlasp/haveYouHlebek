@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/haveYouHlebek/static/css/main.0b917b75.chunk.css",
-    "main.js": "/haveYouHlebek/static/js/main.9e51a983.chunk.js",
-    "main.js.map": "/haveYouHlebek/static/js/main.9e51a983.chunk.js.map",
+    "main.js": "/haveYouHlebek/static/js/main.cd46a737.chunk.js",
+    "main.js.map": "/haveYouHlebek/static/js/main.cd46a737.chunk.js.map",
     "runtime-main.js": "/haveYouHlebek/static/js/runtime-main.ae00c3ca.js",
     "runtime-main.js.map": "/haveYouHlebek/static/js/runtime-main.ae00c3ca.js.map",
     "static/js/2.77b6cbff.chunk.js": "/haveYouHlebek/static/js/2.77b6cbff.chunk.js",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.ae00c3ca.js",
     "static/js/2.77b6cbff.chunk.js",
     "static/css/main.0b917b75.chunk.css",
-    "static/js/main.9e51a983.chunk.js"
+    "static/js/main.cd46a737.chunk.js"
   ]
 }
