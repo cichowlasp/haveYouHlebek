@@ -199,7 +199,6 @@ const pytania = `1.Czy kiedykolwiek wysyłałeś komuś sprośne zdjęcia?
 198. czy kiedykowliek doznałeś kontuzji albo podraznienia po uzywaniu zabawek erotycznych?
 199. Czy kiedykolwiek sąsiedzi dobijali się do mnie po głośnej sesji pukania?
 200. Czy kkiedykowiek całowałeś się z kimś gdy w międzyczasie dolewali Ci alkoholu?
--
 201. Czy kiedykolwiek zjebałeś się podczas pukania?
 202. Czy kiedykolwiek zjebałeś się podczas całowania z kimś?
 203. Czy kiedykolwiek zdejmowałeś komuś część ubrania ustami lub zębami?
