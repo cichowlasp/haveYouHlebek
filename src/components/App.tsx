@@ -105,13 +105,6 @@ function App() {
 				</div>
 				<h1>Settings</h1>
 				<div className='options'>
-					<button
-						onClick={() => {
-							resetStatus();
-							setShowSettings(false);
-						}}>
-						Resetuj
-					</button>
 					<textarea
 						value={importedQuestions}
 						onChange={(event) => {
@@ -136,6 +129,13 @@ function App() {
 							Wyczyść zawartość
 						</button>
 					</div>
+					<button
+						onClick={() => {
+							resetStatus();
+							setShowSettings(false);
+						}}>
+						Resetuj
+					</button>
 				</div>
 			</div>
 		</div>
