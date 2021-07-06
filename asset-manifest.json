@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/haveYouHlebek/static/css/main.b6b31021.chunk.css",
+    "main.css": "/haveYouHlebek/static/css/main.e691cad0.chunk.css",
     "main.js": "/haveYouHlebek/static/js/main.1231a7da.chunk.js",
     "main.js.map": "/haveYouHlebek/static/js/main.1231a7da.chunk.js.map",
     "runtime-main.js": "/haveYouHlebek/static/js/runtime-main.ae00c3ca.js",
@@ -10,7 +10,7 @@
     "static/js/3.7cfe3f40.chunk.js": "/haveYouHlebek/static/js/3.7cfe3f40.chunk.js",
     "static/js/3.7cfe3f40.chunk.js.map": "/haveYouHlebek/static/js/3.7cfe3f40.chunk.js.map",
     "index.html": "/haveYouHlebek/index.html",
-    "static/css/main.b6b31021.chunk.css.map": "/haveYouHlebek/static/css/main.b6b31021.chunk.css.map",
+    "static/css/main.e691cad0.chunk.css.map": "/haveYouHlebek/static/css/main.e691cad0.chunk.css.map",
     "static/js/2.7e114e60.chunk.js.LICENSE.txt": "/haveYouHlebek/static/js/2.7e114e60.chunk.js.LICENSE.txt",
     "static/media/lesiu.09ee877d.svg": "/haveYouHlebek/static/media/lesiu.09ee877d.svg",
     "static/media/settings.28b4a777.svg": "/haveYouHlebek/static/media/settings.28b4a777.svg"
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.ae00c3ca.js",
     "static/js/2.7e114e60.chunk.js",
-    "static/css/main.b6b31021.chunk.css",
+    "static/css/main.e691cad0.chunk.css",
     "static/js/main.1231a7da.chunk.js"
   ]
 }
