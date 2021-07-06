@@ -1,65 +1,76 @@
 import React, { useState } from 'react';
-import { tranformedPytania } from '../utils/transformToList';
+import {
+	tranformedPytania,
+	transformTextToQuestionsTab,
+} from '../utils/transformToList';
 import image from '../assets/lesiu.svg';
 import settings from '../assets/settings.svg';
 import './App.css';
 
+const initialState = {
+	notUsed: tranformedPytania,
+	used: [],
+};
+
+interface Questions {
+	notUsed: { question: string; index: number }[];
+	used: { question: string; index: number }[];
+}
+
 function App() {
-	const initialState = {
-		notUsed: tranformedPytania,
-		used: [],
-	};
 	const [question, setQuestion] = useState(
 		'Tutaj pojawi się pytanie po kliknięciu przycisku losuj'
 	);
-	const [questions, setQuestions] = useState<{
-		notUsed: { question: string; index: number }[];
-		used: { question: string; index: number }[];
-	}>(
+	const [questions, setQuestions] = useState<Questions>(
 		JSON.parse(
 			localStorage.getItem('status') || JSON.stringify(initialState)
 		)
 	);
-
 	const [importedQuestions, setImportedQuestions] = useState<string>('');
+	const [showSettings, setShowSettings] = useState<boolean>(false);
 
-	const [showSettings, setShowSettings] = useState(false);
+	const saveToLocalStorage = (name: string, data: Questions) => {
+		localStorage.setItem(name, JSON.stringify(data));
+	};
 
-	const getRandomQuestion = () => {
-		if (questions.notUsed.length === 0) {
+	const updateQuestion = () => {
+		if (questions.notUsed.length === 0)
 			return 'Koniec pytań. Kliknij resetruj aby zagrać ponownie';
-		}
+
 		const randomQuestion =
 			questions.notUsed[
 				Math.floor(Math.random() * questions.notUsed.length)
 			];
-		setQuestions({
+
+		const updatedQuestions = {
 			notUsed: questions.notUsed.filter(
 				({ index }) => index !== randomQuestion.index
 			),
 			used: [...questions.used, randomQuestion],
-		});
-		localStorage.setItem(
-			'status',
-			JSON.stringify({
-				notUsed: questions.notUsed.filter(
-					({ index }) => index !== randomQuestion.index
-				),
-				used: [...questions.used, randomQuestion],
-			})
-		);
+		};
+		setQuestions(updatedQuestions);
+		saveToLocalStorage('status', updatedQuestions);
 		return randomQuestion.question;
 	};
 
 	const resetStatus = () => {
 		setQuestions(initialState);
-		localStorage.setItem('status', JSON.stringify(initialState));
+		saveToLocalStorage('status', initialState);
 		setQuestion('Tutaj pojawi się pytanie po kliknięciu przycisku losuj');
+	};
+
+	const onClick = () => {
+		setQuestions({
+			notUsed: transformTextToQuestionsTab(importedQuestions.trim()),
+			used: [],
+		});
+		setQuestion('Tutaj pojawi się pytanie po kliknięciu przycisku losuj');
+		setShowSettings(false);
 	};
 
 	return (
 		<div className='App'>
-			<header className='App-header'>
+			<header className={`App-header ${showSettings ? 'opacity' : ''}`}>
 				<div
 					className='settings'
 					onClick={() => setShowSettings((prev) => !prev)}>
@@ -73,7 +84,7 @@ function App() {
 				{questions.notUsed.length === 0 ? (
 					<button onClick={resetStatus}>Resetuj</button>
 				) : (
-					<button onClick={() => setQuestion(getRandomQuestion())}>
+					<button onClick={() => setQuestion(updateQuestion())}>
 						Losuj
 					</button>
 				)}
@@ -86,73 +97,47 @@ function App() {
 						Wykorzystane: <span>{questions.used.length}</span>
 					</div>
 				</div>
-				<div className={showSettings ? 'settings-menu' : 'disabled'}>
-					<div
-						className='close'
-						onClick={() => setShowSettings(false)}>
-						X
-					</div>
-					<h1>Settings</h1>
-					<div className='options'>
+			</header>
+
+			<div className={showSettings ? 'settings-menu' : 'disabled'}>
+				<div className='close' onClick={() => setShowSettings(false)}>
+					X
+				</div>
+				<h1>Settings</h1>
+				<div className='options'>
+					<button
+						onClick={() => {
+							resetStatus();
+							setShowSettings(false);
+						}}>
+						Resetuj
+					</button>
+					<textarea
+						value={importedQuestions}
+						onChange={(event) => {
+							setImportedQuestions(event.target.value);
+						}}
+						placeholder='Tutaj wklej pytania'></textarea>
+					<div className='button-container'>
 						<button
-							onClick={() => {
-								resetStatus();
-								setShowSettings(false);
-							}}>
-							Resetuj
+							disabled={
+								transformTextToQuestionsTab(importedQuestions)
+									.length === 1
+									? true
+									: false
+							}
+							onClick={onClick}
+							className='text-area'>
+							Zastąp pytania
 						</button>
-						<textarea
-							value={importedQuestions}
-							onChange={(event) => {
-								setImportedQuestions(event.target.value);
-							}}
-							placeholder='Tutaj wklej pytania'></textarea>
-						<div>
-							<button
-								disabled={
-									{
-										notUsed: importedQuestions
-											.split('\n')
-											.map((el, index) => {
-												return {
-													index: index,
-													question: el.trim(),
-												};
-											}),
-										used: [],
-									}.notUsed.length === 1
-										? true
-										: false
-								}
-								onClick={() => {
-									setQuestions({
-										notUsed: importedQuestions
-											.split('\n')
-											.map((el, index) => {
-												return {
-													index: index,
-													question: el.trim(),
-												};
-											}),
-										used: [],
-									});
-									setQuestion(
-										'Tutaj pojawi się pytanie po kliknięciu przycisku losuj'
-									);
-									setShowSettings(false);
-								}}
-								className='text-area'>
-								Zastąp pytania
-							</button>
-							<button
-								onClick={() => setImportedQuestions('')}
-								className='text-area'>
-								Wyczyść zawartość
-							</button>
-						</div>
+						<button
+							onClick={() => setImportedQuestions('')}
+							className='text-area'>
+							Wyczyść zawartość
+						</button>
 					</div>
 				</div>
-			</header>
+			</div>
 		</div>
 	);
 }

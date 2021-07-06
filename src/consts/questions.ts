@@ -1,4 +1,4 @@
-const pytania = `1.Czy kiedykolwiek wysyłałeś komuś sprośne zdjęcia?
+export const pytania = `1.Czy kiedykolwiek wysyłałeś komuś sprośne zdjęcia?
 2.Czy kiedykolwiek spałeś roznegliżowany/nagi? 
 3.Czy kiedykowiek ktoś odjebał dla Ciebie taniec erotyczny? 
 4.Czy kiedykolwiek odjebałeś dla kogoś taniec erotyczny? 
@@ -297,10 +297,4 @@ const pytania = `1.Czy kiedykolwiek wysyłałeś komuś sprośne zdjęcia?
 297. Czy kiedykolwiek czytałeś TT Martyny?
 298. Czy kiedykolwiek czytałeś książki ze słoika po pesto?
 299. Czy kiedykolwiek narzekałeś na ceny lub kierownictwo w Cyber Machinie?
-300. Czy kiedykolwiek wziąłeś jakieś ubranie z kosza na brudy, żeby je założyć?`.split(
-	'\n'
-);
-
-export const tranformedPytania = pytania.map((el, index) => {
-	return { index: index, question: el.replace(/[0-9.]/g, '').trim() };
-});
+300. Czy kiedykolwiek wziąłeś jakieś ubranie z kosza na brudy, żeby je założyć?`;
