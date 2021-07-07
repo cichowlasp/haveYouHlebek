@@ -103,7 +103,7 @@ function App() {
 				<div className='close' onClick={() => setShowSettings(false)}>
 					X
 				</div>
-				<h1>Settings</h1>
+				<h1>Ustawienia</h1>
 				<div className='options'>
 					<textarea
 						value={importedQuestions}
@@ -114,8 +114,9 @@ function App() {
 					<div className='button-container'>
 						<button
 							disabled={
-								transformTextToQuestionsTab(importedQuestions)
-									.length === 1
+								transformTextToQuestionsTab(
+									importedQuestions.trim()
+								).length === 1
 									? true
 									: false
 							}
