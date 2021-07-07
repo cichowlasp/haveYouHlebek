@@ -8,6 +8,7 @@
 
 .App {
 	text-align: center;
+	position: relative;
 	height: 100%;
 	min-height: 25em;
 }
@@ -32,10 +33,12 @@ p {
 	justify-content: center;
 	font-size: 1.5rem;
 	align-items: center;
+	max-width: 100%;
 }
 .container {
 	min-height: 20vh;
-	width: 100vw;
+	height: max-content;
+	width: 90%;
 }
 .App-logo {
 	height: 5rem;
@@ -111,12 +114,13 @@ button:disabled {
 
 .settings-menu {
 	position: absolute;
-	top: 17%;
-	left: 10%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 	background-color: var(--color-background-dark);
 	color: var(--color-font);
 	border-radius: 20px;
-	width: 80vw;
+	width: 80%;
 	padding-bottom: 1rem;
 	box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
 		rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
