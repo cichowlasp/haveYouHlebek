@@ -29,16 +29,14 @@ p {
 	padding: 0.5rem 2rem;
 	margin: 0 1rem;
 	border-radius: 10px;
-	display: flex;
-	justify-content: center;
 	font-size: 1.5rem;
 	align-items: center;
-	max-width: 100%;
+	overflow-wrap: break-word;
 }
 .container {
 	min-height: 20vh;
 	height: max-content;
-	width: 90%;
+	max-width: 90vw;
 }
 .App-logo {
 	height: 5rem;
