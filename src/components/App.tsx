@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
 	tranformedPytania,
 	transformTextToQuestionsTab,
 } from '../utils/transformToList';
 import image from '../assets/lesiu.svg';
 import settings from '../assets/settings.svg';
+import darkmode from '../assets/darkmode.svg';
 import './App.css';
+import { darkTheme,lightTheme } from '../consts/themes';
 
 const initialState = {
 	notUsed: tranformedPytania,
@@ -28,8 +30,11 @@ function App() {
 	);
 	const [importedQuestions, setImportedQuestions] = useState<string>('');
 	const [showSettings, setShowSettings] = useState<boolean>(false);
+	const [isDarkMode ,setIsDarkMode] = useState<boolean>(JSON.parse(
+		localStorage.getItem('isDarkMode') || JSON.stringify(false)
+	));
 
-	const saveToLocalStorage = (name: string, data: Questions) => {
+	const saveToLocalStorage = (name: string, data: Questions | boolean) => {
 		localStorage.setItem(name, JSON.stringify(data));
 	};
 
@@ -68,14 +73,30 @@ function App() {
 		setShowSettings(false);
 	};
 
+	const setColors = () => {
+		const theme = isDarkMode?darkTheme:lightTheme;
+		document.documentElement.style.setProperty('--color-background',theme.colorBackground);
+		document.documentElement.style.setProperty('--color-background-dark',theme.colorBackgroundDark);
+		document.documentElement.style.setProperty('--color-accent',theme.colorAccent);
+		document.documentElement.style.setProperty('--color-accent-dark',theme.colorAccentDark);
+		document.documentElement.style.setProperty('--color-font',theme.colorFont);
+		document.documentElement.style.setProperty('--color-background-accent',theme.colorBackgroundAccent);
+	} 
+
+	const toogleTheme = ()=>{
+		setIsDarkMode(preValue=>!preValue);
+		saveToLocalStorage('isDarkMode',!isDarkMode);
+		setColors();
+		
+	}
+
+	useEffect(() => {
+		setColors();
+	})
+
 	return (
 		<div className='App'>
 			<header className={`App-header ${showSettings ? 'opacity' : ''}`}>
-				<div
-					className='settings'
-					onClick={() => setShowSettings((prev) => !prev)}>
-					<img width='35px' src={settings} alt='settings' />
-				</div>
 				<h1>Have You Hlebek</h1>
 				<img src={image} className='App-logo' alt='logo' />
 				<div className='container'>
@@ -96,6 +117,18 @@ function App() {
 					<div className='split'>
 						Wykorzystane: <span>{questions.used.length}</span>
 					</div>
+				</div>
+				<div className='navbar'>
+				<div
+					className='settings'
+					onClick={toogleTheme}>
+					<img src={darkmode} alt='darkmode' />
+				</div>
+				<div
+					className='settings'
+					onClick={() => setShowSettings((prev) => !prev)}>
+					<img src={settings} alt='settings' />
+				</div>
 				</div>
 			</header>
 

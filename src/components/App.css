@@ -4,6 +4,11 @@
 	--color-accent: #f55d5d;
 	--color-accent-dark: #8d3131;
 	--color-font: white;
+	--color-background-accent: black;
+}
+
+html {
+	background-color: var(--color-background);
 }
 
 .App {
@@ -14,24 +19,25 @@
 }
 
 .App-header {
-	background-color: #1c1c29;
+	background-color: var(--color-background);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
 	font-size: calc(10px + 2vmin);
-	color: white;
+	color: var(--color-font);
 	height: 100%;
 }
 
 p {
-	background-color: black;
-	padding: 0.5rem 2rem;
+	background-color: var(--color-background-accent);
+	padding: 1rem 2rem;
 	margin: 0 1rem;
 	border-radius: 10px;
 	font-size: 1.5rem;
 	align-items: center;
 	overflow-wrap: break-word;
+	color:white;
 }
 .container {
 	min-height: 20vh;
@@ -64,7 +70,7 @@ button {
 
 button:hover {
 	cursor: pointer;
-	background-color: black;
+	background-color: var(--color-background-accent);
 	color: var(--color-font);
 	background-color: var(--color-accent-dark);
 }
@@ -85,20 +91,11 @@ button:disabled {
 	height: 3rem;
 	flex-direction: column;
 	justify-content: space-between;
-	margin-bottom: 1rem;
+	margin-bottom: 4rem;
 }
 
 .split span {
 	margin-left: 1rem;
-}
-.settings {
-	position: absolute;
-	bottom: 10px;
-	right: 10px;
-}
-
-.settings:hover {
-	cursor: pointer;
 }
 
 @keyframes App-logo-spin {
@@ -173,4 +170,29 @@ textarea:focus {
 	justify-content: center;
 	align-items: center;
 	margin-bottom: 1.5rem;
+}
+
+.navbar {
+	background-color: rgba(0, 0, 0, 0.5);
+	position: fixed;
+	height: 3.5rem;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 1rem 1rem 0 0;
+	bottom: 0;
+
+}
+
+.settings{
+	margin: 0 1rem;
+}
+
+.settings img{
+	margin-top: 5px;
+}
+
+.settings:hover {
+	cursor: pointer;
 }
