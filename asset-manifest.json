@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/haveYouHlebek/static/css/main.5cd8028d.chunk.css",
-    "main.js": "/haveYouHlebek/static/js/main.bf597303.chunk.js",
-    "main.js.map": "/haveYouHlebek/static/js/main.bf597303.chunk.js.map",
+    "main.css": "/haveYouHlebek/static/css/main.1b24f5ff.chunk.css",
+    "main.js": "/haveYouHlebek/static/js/main.c591ec7b.chunk.js",
+    "main.js.map": "/haveYouHlebek/static/js/main.c591ec7b.chunk.js.map",
     "runtime-main.js": "/haveYouHlebek/static/js/runtime-main.ae00c3ca.js",
     "runtime-main.js.map": "/haveYouHlebek/static/js/runtime-main.ae00c3ca.js.map",
     "static/js/2.0b249ac3.chunk.js": "/haveYouHlebek/static/js/2.0b249ac3.chunk.js",
@@ -10,16 +10,16 @@
     "static/js/3.7cfe3f40.chunk.js": "/haveYouHlebek/static/js/3.7cfe3f40.chunk.js",
     "static/js/3.7cfe3f40.chunk.js.map": "/haveYouHlebek/static/js/3.7cfe3f40.chunk.js.map",
     "index.html": "/haveYouHlebek/index.html",
-    "static/css/main.5cd8028d.chunk.css.map": "/haveYouHlebek/static/css/main.5cd8028d.chunk.css.map",
+    "static/css/main.1b24f5ff.chunk.css.map": "/haveYouHlebek/static/css/main.1b24f5ff.chunk.css.map",
     "static/js/2.0b249ac3.chunk.js.LICENSE.txt": "/haveYouHlebek/static/js/2.0b249ac3.chunk.js.LICENSE.txt",
     "static/media/darkmode.b4539252.svg": "/haveYouHlebek/static/media/darkmode.b4539252.svg",
     "static/media/lesiu.09ee877d.svg": "/haveYouHlebek/static/media/lesiu.09ee877d.svg",
-    "static/media/settings.927e015a.svg": "/haveYouHlebek/static/media/settings.927e015a.svg"
+    "static/media/settings.72df61e8.svg": "/haveYouHlebek/static/media/settings.72df61e8.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.ae00c3ca.js",
     "static/js/2.0b249ac3.chunk.js",
-    "static/css/main.5cd8028d.chunk.css",
-    "static/js/main.bf597303.chunk.js"
+    "static/css/main.1b24f5ff.chunk.css",
+    "static/js/main.c591ec7b.chunk.js"
   ]
 }
