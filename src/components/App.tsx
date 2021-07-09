@@ -7,7 +7,7 @@ import image from '../assets/lesiu.svg';
 import settings from '../assets/settings.svg';
 import darkmode from '../assets/darkmode.svg';
 import './App.css';
-import { darkTheme,lightTheme } from '../consts/themes';
+import { darkTheme, lightTheme } from '../consts/themes';
 
 const initialState = {
 	notUsed: tranformedPytania,
@@ -30,9 +30,9 @@ function App() {
 	);
 	const [importedQuestions, setImportedQuestions] = useState<string>('');
 	const [showSettings, setShowSettings] = useState<boolean>(false);
-	const [isDarkMode ,setIsDarkMode] = useState<boolean>(JSON.parse(
-		localStorage.getItem('isDarkMode') || JSON.stringify(false)
-	));
+	const [isDarkMode, setIsDarkMode] = useState<boolean>(
+		JSON.parse(localStorage.getItem('isDarkMode') || JSON.stringify(false))
+	);
 
 	const saveToLocalStorage = (name: string, data: Questions | boolean) => {
 		localStorage.setItem(name, JSON.stringify(data));
@@ -74,25 +74,42 @@ function App() {
 	};
 
 	const setColors = () => {
-		const theme = isDarkMode?darkTheme:lightTheme;
-		document.documentElement.style.setProperty('--color-background',theme.colorBackground);
-		document.documentElement.style.setProperty('--color-background-dark',theme.colorBackgroundDark);
-		document.documentElement.style.setProperty('--color-accent',theme.colorAccent);
-		document.documentElement.style.setProperty('--color-accent-dark',theme.colorAccentDark);
-		document.documentElement.style.setProperty('--color-font',theme.colorFont);
-		document.documentElement.style.setProperty('--color-background-accent',theme.colorBackgroundAccent);
-	} 
+		const theme = isDarkMode ? darkTheme : lightTheme;
+		document.documentElement.style.setProperty(
+			'--color-background',
+			theme.colorBackground
+		);
+		document.documentElement.style.setProperty(
+			'--color-background-dark',
+			theme.colorBackgroundDark
+		);
+		document.documentElement.style.setProperty(
+			'--color-accent',
+			theme.colorAccent
+		);
+		document.documentElement.style.setProperty(
+			'--color-accent-dark',
+			theme.colorAccentDark
+		);
+		document.documentElement.style.setProperty(
+			'--color-font',
+			theme.colorFont
+		);
+		document.documentElement.style.setProperty(
+			'--color-background-accent',
+			theme.colorBackgroundAccent
+		);
+	};
 
-	const toogleTheme = ()=>{
-		setIsDarkMode(preValue=>!preValue);
-		saveToLocalStorage('isDarkMode',!isDarkMode);
+	const toogleTheme = () => {
+		setIsDarkMode((preValue) => !preValue);
+		saveToLocalStorage('isDarkMode', !isDarkMode);
 		setColors();
-		
-	}
+	};
 
 	useEffect(() => {
 		setColors();
-	})
+	});
 
 	return (
 		<div className='App'>
@@ -119,20 +136,18 @@ function App() {
 					</div>
 				</div>
 				<div className='navbar'>
-				<div
-					className='settings'
-					onClick={toogleTheme}>
-					<img src={darkmode} alt='darkmode' />
-				</div>
-				<div
-					className='settings'
-					onClick={() => setShowSettings((prev) => !prev)}>
-					<img src={settings} alt='settings' />
-				</div>
+					<div className='settings' onClick={toogleTheme}>
+						<img src={darkmode} alt='darkmode' />
+					</div>
+					<div
+						className='settings'
+						onClick={() => setShowSettings((prev) => !prev)}>
+						<img src={settings} alt='settings' />
+					</div>
 				</div>
 			</header>
 
-			<div className={showSettings ? 'settings-menu' : 'disabled'}>
+			<div className={`settings-menu ${showSettings ? '' : 'disabled'}`}>
 				<div className='close' onClick={() => setShowSettings(false)}>
 					X
 				</div>
