@@ -39,6 +39,12 @@ p {
 	overflow-wrap: break-word;
 	color:white;	
 }
+@media (max-width: 380px) {
+	p{
+		font-size: 1rem;
+	}
+	
+}
 .container {
 
 	max-height: 30vh;
