@@ -60,6 +60,28 @@ p {
 	.App-logo {
 		animation: App-logo-spin infinite 5s linear;
 	}
+	.settings-menu {
+		animation: slidein 300ms;
+	}
+}
+
+@keyframes App-logo-spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes slidein {
+	from {
+		transform: translate(-50%, 100%);
+	}
+
+	to {
+		transform: translate(-50%, -50%);
+	}
 }
 
 button {
@@ -104,15 +126,6 @@ button:disabled {
 	margin-left: 1rem;
 }
 
-@keyframes App-logo-spin {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg);
-	}
-}
-
 .settings-menu {
 	position: absolute;
 	top: 50%;
@@ -126,20 +139,6 @@ button:disabled {
 	box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
 		rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
 		rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-	animation-duration: 0.2s;
-	animation-name: slidein;
-}
-
-@keyframes slidein {
-	from {
-		margin-bottom: 100%;
-		top: 100%;
-	}
-
-	to {
-		margin-bottom: 0%;
-		top: 50%;
-	}
 }
 
 .settings-menu .close {
