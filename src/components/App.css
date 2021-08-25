@@ -57,13 +57,11 @@ p {
 	pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-	.App-logo {
-		animation: App-logo-spin infinite 5s linear;
-	}
-	.settings-menu {
-		animation: slidein 300ms;
-	}
+.App-logo {
+	animation: App-logo-spin infinite 5s linear;
+}
+.settings-menu {
+	animation: slidein 300ms;
 }
 
 @keyframes App-logo-spin {
