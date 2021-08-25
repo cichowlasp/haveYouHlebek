@@ -147,46 +147,50 @@ function App() {
 				</div>
 			</header>
 
-			<div className={`settings-menu ${showSettings ? '' : 'disabled'}`}>
-				<div className='close' onClick={() => setShowSettings(false)}>
-					X
-				</div>
-				<h1>Ustawienia</h1>
-				<div className='options'>
-					<textarea
-						value={importedQuestions}
-						onChange={(event) => {
-							setImportedQuestions(event.target.value);
-						}}
-						placeholder='Tutaj wklej pytania'></textarea>
-					<div className='button-container'>
+			{showSettings && (
+				<div className='settings-menu'>
+					<div
+						className='close'
+						onClick={() => setShowSettings(false)}>
+						X
+					</div>
+					<h1>Ustawienia</h1>
+					<div className='options'>
+						<textarea
+							value={importedQuestions}
+							onChange={(event) => {
+								setImportedQuestions(event.target.value);
+							}}
+							placeholder='Tutaj wklej pytania'></textarea>
+						<div className='button-container'>
+							<button
+								disabled={
+									transformTextToQuestionsTab(
+										importedQuestions.trim()
+									).length === 1
+										? true
+										: false
+								}
+								onClick={onClick}
+								className='text-area'>
+								Zastąp pytania
+							</button>
+							<button
+								onClick={() => setImportedQuestions('')}
+								className='text-area'>
+								Wyczyść zawartość
+							</button>
+						</div>
 						<button
-							disabled={
-								transformTextToQuestionsTab(
-									importedQuestions.trim()
-								).length === 1
-									? true
-									: false
-							}
-							onClick={onClick}
-							className='text-area'>
-							Zastąp pytania
-						</button>
-						<button
-							onClick={() => setImportedQuestions('')}
-							className='text-area'>
-							Wyczyść zawartość
+							onClick={() => {
+								resetStatus();
+								setShowSettings(false);
+							}}>
+							Resetuj
 						</button>
 					</div>
-					<button
-						onClick={() => {
-							resetStatus();
-							setShowSettings(false);
-						}}>
-						Resetuj
-					</button>
 				</div>
-			</div>
+			)}
 		</div>
 	);
 }
